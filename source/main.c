@@ -125,7 +125,7 @@ int _main(struct thread *td) {
     return 0;
   }
 
-  printf_notification("USB device detected.\n\nStarting kernel dumping to %s.", usb_name);
+  printf_notification("USB device detected.\nKernel Base: 0x%016lx\nStarting kernel dumping to %s.", kernel_base, usb_name);
 
   uint64_t kernel_size = get_kernel_size(kernel_base);
   uint64_t num_of_kernel_chunks = (kernel_size + (KERNEL_CHUNK_SIZE / 2)) / KERNEL_CHUNK_SIZE;
